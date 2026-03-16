@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3-Week Action Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0a; color: #fff; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 860px; width: 100%; }
+  .title { text-align: center; margin-bottom: 48px; }
+  .title .tag { display: inline-block; font-size: 12px; font-weight: 700; color: #a5b4fc; letter-spacing: 3px; text-transform: uppercase; background: rgba(99,102,241,0.15); padding: 6px 18px; border-radius: 20px; margin-bottom: 14px; }
+  .title h1 { font-size: 30px; color: #f1f5f9; font-weight: 800; }
+  .title p { font-size: 15px; color: #94a3b8; margin-top: 8px; }
+  .timeline { position: relative; padding-left: 60px; }
+  .timeline::before { content: ''; position: absolute; left: 24px; top: 10px; bottom: 10px; width: 3px; background: linear-gradient(to bottom, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%); border-radius: 3px; }
+  .week { position: relative; margin-bottom: 32px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 32px 36px; transition: transform 0.25s, border-color 0.25s; }
+  .week:hover { transform: translateX(6px); }
+  .week::before { content: ''; position: absolute; left: -44px; top: 36px; width: 18px; height: 18px; border-radius: 50%; border: 3px solid; }
+  .week::after { content: ''; position: absolute; left: -38px; top: 42px; width: 6px; height: 6px; border-radius: 50%; }
+  .week:nth-child(1)::before { border-color: #818cf8; background: rgba(99,102,241,0.3); }
+  .week:nth-child(1)::after { background: #6366f1; }
+  .week:nth-child(1):hover { border-color: rgba(99,102,241,0.3); }
+  .week:nth-child(2)::before { border-color: #a78bfa; background: rgba(139,92,246,0.3); }
+  .week:nth-child(2)::after { background: #8b5cf6; }
+  .week:nth-child(2):hover { border-color: rgba(139,92,246,0.3); }
+  .week:nth-child(3)::before { border-color: #c4b5fd; background: rgba(167,139,250,0.3); }
+  .week:nth-child(3)::after { background: #a78bfa; }
+  .week:nth-child(3):hover { border-color: rgba(167,139,250,0.3); }
+  .week .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 800; margin-bottom: 10px; }
+  .week:nth-child(1) .label { color: #818cf8; }
+  .week:nth-child(2) .label { color: #a78bfa; }
+  .week:nth-child(3) .label { color: #c4b5fd; }
+  .week h2 { font-size: 20px; color: #f1f5f9; font-weight: 700; margin-bottom: 10px; }
+  .week p { font-size: 14px; color: #94a3b8; line-height: 1.7; }
+  .systems { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .systems span { background: rgba(99,102,241,0.12); color: #a5b4fc; padding: 5px 14px; border-radius: 10px; font-size: 12px; font-weight: 600; border: 1px solid rgba(99,102,241,0.15); }
+  .result-badge { display: inline-flex; align-items: baseline; gap: 6px; margin-top: 18px; padding: 10px 20px; border-radius: 12px; }
+  .week:nth-child(1) .result-badge { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.15); }
+  .week:nth-child(2) .result-badge { background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.15); }
+  .week:nth-child(3) .result-badge { background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.15); }
+  .result-badge .big { font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+  .week:nth-child(1) .result-badge .big { color: #a5b4fc; }
+  .week:nth-child(2) .result-badge .big { color: #c4b5fd; }
+  .week:nth-child(3) .result-badge .big { color: #ddd6fe; }
+  .result-badge .small { font-size: 13px; color: #94a3b8; }
+  .total { text-align: center; margin-top: 44px; margin-left: 60px; padding: 36px; background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1)); border-radius: 20px; border: 1px solid rgba(139,92,246,0.2); position: relative; overflow: hidden; }
+  .total::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(139,92,246,0.06) 0%, transparent 60%); }
+  .total .number { font-size: 56px; font-weight: 900; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -2px; position: relative; z-index: 1; }
+  .total .desc { font-size: 15px; color: #94a3b8; margin-top: 6px; position: relative; z-index: 1; }
+  @media (max-width: 700px) { .timeline { padding-left: 40px; } .timeline::before { left: 14px; } .week::before { left: -34px; } .week::after { left: -28px; } .week { padding: 24px 20px; } .total { margin-left: 40px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title">
+    <div class="tag">Getting Started</div>
+    <h1>Your 3-Week Action Plan</h1>
+    <p>Start small. Build momentum. Go autonomous.</p>
+  </div>
+  <div class="timeline">
+    <div class="week">
+      <div class="label">Week 1 — Quick Wins</div>
+      <h2>Set up the two easiest systems</h2>
+      <p>Start with emails and meeting notes. These take 5 minutes to set up and you'll see results the same day.</p>
+      <div class="systems"><span>#1 Pro Emails</span><span>#2 Meeting Notes</span></div>
+      <div class="result-badge"><span class="big">+5h</span><span class="small">back per week</span></div>
+    </div>
+    <div class="week">
+      <div class="label">Week 2 — Build the Stack</div>
+      <h2>Automate information flow + content</h2>
+      <p>Now that you're saving time on tasks, automate how you consume information and create content.</p>
+      <div class="systems"><span>#3 News Monitoring</span><span>#5 LinkedIn Content</span></div>
+      <div class="result-badge"><span class="big">+8h</span><span class="small">back per week</span></div>
+    </div>
+    <div class="week">
+      <div class="label">Week 3 — Full Autonomy</div>
+      <h2>Build your own custom systems</h2>
+      <p>Use System #15 to create workflows tailored to YOUR specific job. This is where it gets exponential.</p>
+      <div class="systems"><span>#15 The Meta-System</span><span>Your custom workflows</span></div>
+      <div class="result-badge"><span class="big">∞</span><span class="small">you're now autonomous</span></div>
+    </div>
+  </div>
+  <div class="total">
+    <div class="number">13+ hours</div>
+    <div class="desc">saved per week after 3 weeks — and it keeps compounding</div>
+  </div>
+</div>
+</body>
+</html>

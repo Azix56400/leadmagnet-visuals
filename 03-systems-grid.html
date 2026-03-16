@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All 15 AI Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0a; color: #fff; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 960px; width: 100%; }
+  .title { text-align: center; margin-bottom: 36px; }
+  .title .tag { display: inline-block; font-size: 12px; font-weight: 700; color: #a5b4fc; letter-spacing: 3px; text-transform: uppercase; background: rgba(99,102,241,0.15); padding: 6px 18px; border-radius: 20px; margin-bottom: 14px; }
+  .title h1 { font-size: 30px; color: #f1f5f9; font-weight: 800; }
+  .title p { font-size: 14px; color: #94a3b8; margin-top: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cell { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 22px 20px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
+  .cell:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+  .cell::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; border-radius: 3px 0 0 3px; }
+  .cat-comm::before { background: linear-gradient(to bottom, #6366f1, #818cf8); }
+  .cat-comm:hover { border-color: rgba(99,102,241,0.3); }
+  .cat-content::before { background: linear-gradient(to bottom, #8b5cf6, #a78bfa); }
+  .cat-content:hover { border-color: rgba(139,92,246,0.3); }
+  .cat-analysis::before { background: linear-gradient(to bottom, #22c55e, #4ade80); }
+  .cat-analysis:hover { border-color: rgba(34,197,94,0.3); }
+  .cat-strategy::before { background: linear-gradient(to bottom, #f59e0b, #fbbf24); }
+  .cat-strategy:hover { border-color: rgba(245,158,11,0.3); }
+  .cat-meta::before { background: linear-gradient(to bottom, #e879f9, #f0abfc); }
+  .cat-meta:hover { border-color: rgba(232,121,249,0.3); }
+  .cell .num { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .cat-comm .num { color: #818cf8; } .cat-content .num { color: #a78bfa; } .cat-analysis .num { color: #4ade80; } .cat-strategy .num { color: #fbbf24; } .cat-meta .num { color: #f0abfc; }
+  .cell .name { font-size: 16px; font-weight: 700; color: #f1f5f9; margin-bottom: 6px; }
+  .cell .desc { font-size: 12px; color: #64748b; line-height: 1.5; }
+  .cell .time { margin-top: 12px; font-size: 13px; font-weight: 700; }
+  .cat-comm .time { color: #818cf8; } .cat-content .time { color: #a78bfa; } .cat-analysis .time { color: #4ade80; } .cat-strategy .time { color: #fbbf24; } .cat-meta .time { color: #f0abfc; }
+  .span-full { grid-column: span 3; text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(232,121,249,0.06), rgba(99,102,241,0.06)); border: 1px dashed rgba(232,121,249,0.25); }
+  .span-full .name { font-size: 20px; color: #f0abfc; }
+  .span-full .desc { color: #94a3b8; font-size: 14px; max-width: 500px; margin: 0 auto; }
+  .legend { display: flex; gap: 24px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+  .legend .item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #64748b; font-weight: 500; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 4px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .span-full { grid-column: span 1; } }
+  @media (min-width: 701px) and (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .span-full { grid-column: span 2; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title">
+    <div class="tag">Quick Reference</div>
+    <h1>All 15 Systems at a Glance</h1>
+    <p>Organized by category — start with whatever fits your daily pain points</p>
+  </div>
+  <div class="grid">
+    <div class="cell cat-comm"><div class="num">System #1</div><div class="name">Pro Emails</div><div class="desc">3 email variants in 15 seconds</div><div class="time">Saves 1.5h/day</div></div>
+    <div class="cell cat-comm"><div class="num">System #2</div><div class="name">Meeting Notes</div><div class="desc">Full recap in 2 minutes</div><div class="time">Saves 3h/week</div></div>
+    <div class="cell cat-comm"><div class="num">System #6</div><div class="name">Client Responses</div><div class="desc">Context-aware replies, every time</div><div class="time">Saves 1h/day</div></div>
+    <div class="cell cat-content"><div class="num">System #5</div><div class="name">LinkedIn Content</div><div class="desc">5 posts in 30 minutes</div><div class="time">Saves 4h/week</div></div>
+    <div class="cell cat-content"><div class="num">System #8</div><div class="name">Creative Briefs</div><div class="desc">Designer-ready in 2 minutes</div><div class="time">Saves 1h/task</div></div>
+    <div class="cell cat-content"><div class="num">System #11</div><div class="name">Translation</div><div class="desc">Cultural adaptation built-in</div><div class="time">Saves 2h/task</div></div>
+    <div class="cell cat-analysis"><div class="num">System #3</div><div class="name">News Monitoring</div><div class="desc">Zero-effort daily intel</div><div class="time">Saves 30min/day</div></div>
+    <div class="cell cat-analysis"><div class="num">System #4</div><div class="name">Doc Analysis</div><div class="desc">50 pages → 5 minutes</div><div class="time">Saves 2-4h/doc</div></div>
+    <div class="cell cat-analysis"><div class="num">System #13</div><div class="name">Data → Insights</div><div class="desc">Trends + anomalies, fast</div><div class="time">Saves 2h/analysis</div></div>
+    <div class="cell cat-strategy"><div class="num">System #7</div><div class="name">Meeting Prep</div><div class="desc">Walk in prepared every time</div><div class="time">Saves 30min/mtg</div></div>
+    <div class="cell cat-strategy"><div class="num">System #9</div><div class="name">Competitive Intel</div><div class="desc">Actionable analysis in 5 minutes</div><div class="time">Saves 3h/analysis</div></div>
+    <div class="cell cat-strategy"><div class="num">System #14</div><div class="name">Brainstorming</div><div class="desc">10 ideas, ranked and scored</div><div class="time">Saves 1h/session</div></div>
+    <div class="cell cat-strategy"><div class="num">System #10</div><div class="name">Notes → Structure</div><div class="desc">Messy → organized in 1 min</div><div class="time">Saves 1h/task</div></div>
+    <div class="cell cat-strategy"><div class="num">System #12</div><div class="name">Fast-Track Learning</div><div class="desc">Get operational in days, not weeks</div><div class="time">Saves 10h+/topic</div></div>
+    <div class="cell span-full cat-meta">
+      <div class="num">System #15</div>
+      <div class="name">⚡ The Meta-System</div>
+      <div class="desc">Build your own workflows for any repetitive task. This is the one that makes all others possible.</div>
+      <div class="time" style="margin-top:14px;">Time saved: ∞</div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="item"><div class="dot" style="background:#6366f1"></div> Communication</div>
+    <div class="item"><div class="dot" style="background:#8b5cf6"></div> Content</div>
+    <div class="item"><div class="dot" style="background:#22c55e"></div> Analysis</div>
+    <div class="item"><div class="dot" style="background:#f59e0b"></div> Strategy</div>
+    <div class="item"><div class="dot" style="background:#e879f9"></div> Meta</div>
+  </div>
+</div>
+</body>
+</html>
