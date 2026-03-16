@@ -1,73 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Built in Minutes, Not Months</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
-        .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
-        .header { text-align: center; margin-bottom: 32px; }
-        .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .subtitle { font-size: 14px; color: #a0aec0; margin-top: 8px; }
-        .timeline { display: flex; align-items: center; gap: 0; margin-top: 28px; margin-bottom: 28px; justify-content: center; flex-wrap: wrap; }
-        .phase { flex: 1; min-width: 120px; max-width: 170px; background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s ease; }
-        .phase:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
-        .phase-time { font-size: 22px; font-weight: 700; color: #6366f1; margin-bottom: 6px; }
-        .phase-title { font-size: 12px; font-weight: 600; color: #e2e8f0; line-height: 1.4; margin-bottom: 4px; }
-        .phase-detail { font-size: 10px; color: #a0aec0; }
-        .arrow { color: #6366f1; font-size: 20px; font-weight: 700; padding: 0 8px; flex-shrink: 0; }
-        .summary-box { background: linear-gradient(135deg, #1a3f1a 0%, #162e16 100%); border: 1px solid #2d5f2d; border-radius: 10px; padding: 24px; text-align: center; }
-        .summary-label { font-size: 11px; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .summary-value { font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #22c55e 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
-        .summary-description { font-size: 13px; color: #86efac; font-weight: 500; }
-        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .timeline { flex-direction: column; gap: 8px; } .arrow { transform: rotate(90deg); } .phase { min-width: 100%; max-width: 100%; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.container{max-width:780px;width:100%}
+.header{text-align:center;margin-bottom:28px}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;background:#6366f1;color:#fff;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
+h1{color:#fff;font-size:24px;font-weight:700;margin-bottom:6px}
+.subtitle{color:rgba(255,255,255,.5);font-size:14px}
+.timeline{display:flex;gap:8px;margin-bottom:24px}
+.phase{flex:1;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.12);border-radius:12px;padding:16px 12px;text-align:center;position:relative;transition:all .3s}
+.phase:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.3);transform:translateY(-2px)}
+.phase-num{width:28px;height:28px;border-radius:50%;background:#6366f1;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.phase-name{color:#fff;font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.phase-time{color:#6366f1;font-size:18px;font-weight:700;margin-bottom:2px}
+.phase-unit{color:rgba(255,255,255,.4);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.phase-desc{color:rgba(255,255,255,.35);font-size:10px;margin-top:6px;line-height:1.3}
+.connector{position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:rgba(99,102,241,.4);font-size:14px;z-index:1}
+.total-bar{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(99,102,241,.05));border:1px solid rgba(99,102,241,.2);border-radius:12px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.total-label{color:rgba(255,255,255,.6);font-size:13px;font-weight:500}
+.total-time{color:#6366f1;font-size:28px;font-weight:800}
+.total-note{color:rgba(255,255,255,.35);font-size:11px}
+@media(max-width:600px){.timeline{flex-wrap:wrap;gap:6px}.phase{flex:1 1 45%}.connector{display:none}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="title">Built in Minutes, Not Months</div>
-            <div class="subtitle">What used to take weeks now takes one Cowork session</div>
-        </div>
-        <div class="timeline">
-            <div class="phase">
-                <div class="phase-time">3 min</div>
-                <div class="phase-title">Content</div>
-                <div class="phase-detail">Claude generates it</div>
-            </div>
-            <div class="arrow">›</div>
-            <div class="phase">
-                <div class="phase-time">3 min</div>
-                <div class="phase-title">Design</div>
-                <div class="phase-detail">Cowork builds visuals</div>
-            </div>
-            <div class="arrow">›</div>
-            <div class="phase">
-                <div class="phase-time">3 min</div>
-                <div class="phase-title">Publish</div>
-                <div class="phase-detail">GitHub + Notion API</div>
-            </div>
-            <div class="arrow">›</div>
-            <div class="phase">
-                <div class="phase-time">3 min</div>
-                <div class="phase-title">Automate</div>
-                <div class="phase-detail">Gmail + Calendar + Apollo</div>
-            </div>
-            <div class="arrow">›</div>
-            <div class="phase">
-                <div class="phase-time">3 min</div>
-                <div class="phase-title">Launch</div>
-                <div class="phase-detail">LinkedIn post → Live</div>
-            </div>
-        </div>
-        <div class="summary-box">
-            <div class="summary-label">Total time from zero to live lead magnet</div>
-            <div class="summary-value">∼ 15 minutes</div>
-            <div class="summary-description">This guide you’re reading? Built exactly like this.</div>
-        </div>
-    </div>
+<div class="container">
+<div class="header">
+<div class="badge">Timeline</div>
+<h1>Built in Minutes, Not Months</h1>
+<p class="subtitle">Your complete lead magnet — from idea to live — in one sitting</p>
+</div>
+<div class="timeline">
+<div class="phase">
+<div class="phase-num">1</div>
+<div class="phase-name">Content</div>
+<div class="phase-time">3</div>
+<div class="phase-unit">minutes</div>
+<div class="phase-desc">Run Claude prompt, paste into Notion</div>
+<span class="connector">›</span>
+</div>
+<div class="phase">
+<div class="phase-num">2</div>
+<div class="phase-name">Design</div>
+<div class="phase-time">3</div>
+<div class="phase-unit">minutes</div>
+<div class="phase-desc">Duplicate HTML template, swap text</div>
+<span class="connector">›</span>
+</div>
+<div class="phase">
+<div class="phase-num">3</div>
+<div class="phase-name">Publish</div>
+<div class="phase-time">2</div>
+<div class="phase-unit">minutes</div>
+<div class="phase-desc">Notion page already configured</div>
+<span class="connector">›</span>
+</div>
+<div class="phase">
+<div class="phase-num">4</div>
+<div class="phase-name">LinkedIn</div>
+<div class="phase-time">4</div>
+<div class="phase-unit">minutes</div>
+<div class="phase-desc">Adapt one of 3 post templates</div>
+<span class="connector">›</span>
+</div>
+<div class="phase">
+<div class="phase-num">5</div>
+<div class="phase-name">Automation</div>
+<div class="phase-time">0</div>
+<div class="phase-unit">minutes</div>
+<div class="phase-desc">Already running on autopilot</div>
+</div>
+</div>
+<div class="total-bar">
+<div>
+<div class="total-label">Total time per lead magnet</div>
+<div class="total-note">After one-time setup (~1 hour)</div>
+</div>
+<div class="total-time">~12 min</div>
+</div>
+</div>
 </body>
 </html>
