@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 3 Pillars of a Lead Magnet That Converts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
+        .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        .header { text-align: center; margin-bottom: 36px; }
+        .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 28px; }
+        .pillar { background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 12px; padding: 28px; position: relative; overflow: hidden; transition: all 0.3s ease; }
+        .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+        .pillar:hover::before { transform: scaleX(1); }
+        .pillar:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
+        .icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 10px; margin-bottom: 16px; font-size: 24px; }
+        .pillar-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: #e2e8f0; }
+        .pillar-items { display: flex; flex-direction: column; gap: 10px; }
+        .pillar-item { font-size: 13px; color: #cbd5e1; line-height: 1.5; padding-left: 16px; position: relative; }
+        .pillar-item::before { content: '\2713'; position: absolute; left: 0; color: #22c55e; font-weight: 700; }
+        .footer-text { text-align: center; font-size: 13px; color: #ef4444; font-weight: 500; padding-top: 24px; border-top: 1px solid #2d2d5f; }
+        @media (max-width: 600px) { .container { padding: 24px; } .title { font-size: 18px; } .pillars-grid { grid-template-columns: 1fr; gap: 16px; } .pillar { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">The 3 Pillars of a Lead Magnet That Converts</div>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="icon">🧠</div>
+                <div class="pillar-title">Content</div>
+                <div class="pillar-items">
+                    <div class="pillar-item">Solves a specific problem</div>
+                    <div class="pillar-item">Actionable, not theoretical</div>
+                    <div class="pillar-item">Shows expertise</div>
+                </div>
+            </div>
+            <div class="pillar">
+                <div class="icon">🎨</div>
+                <div class="pillar-title">Design</div>
+                <div class="pillar-items">
+                    <div class="pillar-item">Professional look = trust</div>
+                    <div class="pillar-item">Interactive > Static PDF</div>
+                    <div class="pillar-item">Mobile-first</div>
+                </div>
+            </div>
+            <div class="pillar">
+                <div class="icon">🚀</div>
+                <div class="pillar-title">Distribution</div>
+                <div class="pillar-items">
+                    <div class="pillar-item">LinkedIn hook post</div>
+                    <div class="pillar-item">Comment CTA + DM</div>
+                    <div class="pillar-item">Email follow-up sequence</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-text">Most creators nail 1 out of 3. That's why they fail.</div>
+    </div>
+</body>
+</html>

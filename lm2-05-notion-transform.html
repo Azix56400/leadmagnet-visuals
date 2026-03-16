@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Transformation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
+        .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        .header { text-align: center; margin-bottom: 32px; }
+        .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+        .mockup { border-radius: 12px; border: 1px solid #2d2d5f; overflow: hidden; background: #1a1a1a; }
+        .mockup-header { background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); padding: 12px 16px; border-bottom: 1px solid #2d2d5f; display: flex; align-items: center; gap: 8px; }
+        .mock-dot { width: 8px; height: 8px; border-radius: 50%; background: #4a5568; }
+        .mockup-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; border-radius: 4px; margin-left: auto; }
+        .mockup.before .mockup-label { background-color: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+        .mockup.after .mockup-label { background-color: rgba(99, 102, 241, 0.2); color: #c4b5fd; }
+        .mockup-content { padding: 20px; min-height: 220px; }
+        .mockup.before .mockup-content { display: flex; flex-direction: column; gap: 12px; }
+        .text-line { height: 8px; background: #2d2d5f; border-radius: 4px; }
+        .text-line.long { width: 100%; }
+        .text-line.short { width: 70%; }
+        .text-line.medium { width: 85%; }
+        .mockup.after .mockup-content { display: flex; flex-direction: column; gap: 16px; }
+        .section { background: linear-gradient(135deg, #1f2f4f 0%, #1a1f3f 100%); border-left: 3px solid; padding: 12px; border-radius: 4px; }
+        .section.blue { border-color: #6366f1; }
+        .section.purple { border-color: #8b5cf6; }
+        .section.green { border-color: #22c55e; }
+        .section-title { height: 8px; background: #4a5568; border-radius: 4px; width: 60%; margin-bottom: 8px; }
+        .section-content { height: 6px; background: #2d2d5f; border-radius: 3px; width: 100%; margin-bottom: 4px; }
+        .section-content:last-child { margin-bottom: 0; }
+        .visual-indicator { height: 12px; background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%); border-radius: 4px; margin-top: 8px; }
+        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .comparison { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Same Content. Completely Different Impact.</div>
+        </div>
+        <div class="comparison">
+            <div class="mockup before">
+                <div class="mockup-header">
+                    <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                    <div class="mockup-label">Before: Just Text</div>
+                </div>
+                <div class="mockup-content">
+                    <div class="text-line long"></div><div class="text-line long"></div><div class="text-line short"></div>
+                    <div style="height: 8px;"></div>
+                    <div class="text-line long"></div><div class="text-line long"></div><div class="text-line medium"></div>
+                    <div style="height: 8px;"></div>
+                    <div class="text-line long"></div><div class="text-line short"></div>
+                </div>
+            </div>
+            <div class="mockup after">
+                <div class="mockup-header">
+                    <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                    <div class="mockup-label">After: With Cowork Visuals</div>
+                </div>
+                <div class="mockup-content">
+                    <div class="section blue"><div class="section-title"></div><div class="section-content"></div><div class="visual-indicator"></div></div>
+                    <div class="section purple"><div class="section-title"></div><div class="section-content"></div><div class="section-content"></div><div class="visual-indicator"></div></div>
+                    <div class="section green"><div class="section-title"></div><div class="section-content"></div><div class="visual-indicator"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

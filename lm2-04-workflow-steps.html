@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your 5-Step Cowork Pipeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
+        .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        .header { text-align: center; margin-bottom: 32px; }
+        .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .pipeline { display: flex; align-items: center; gap: 8px; margin-top: 24px; overflow-x: auto; padding: 16px 0; justify-content: space-between; flex-wrap: wrap; }
+        .node { flex: 1; min-width: 140px; background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 10px; padding: 16px; text-align: center; position: relative; transition: all 0.3s ease; }
+        .node:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
+        .node-icon { font-size: 24px; margin-bottom: 10px; }
+        .node-title { font-size: 13px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+        .node-subtitle { font-size: 11px; color: #a0aec0; line-height: 1.4; }
+        .connector { width: 16px; height: 2px; background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%); position: relative; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .connector::after { content: '\203A'; color: #6366f1; font-size: 18px; font-weight: 700; position: absolute; }
+        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .pipeline { flex-direction: column; gap: 12px; } .connector { width: 2px; height: 16px; } .node { min-width: 100%; } }
+        @media (min-width: 769px) { .pipeline { justify-content: center; gap: 0; } .node { flex: 0 1 160px; } .connector { flex: 0 0 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Your 5-Step Cowork Pipeline</div>
+        </div>
+        <div class="pipeline">
+            <div class="node">
+                <div class="node-icon">🧠</div>
+                <div class="node-title">Content</div>
+                <div class="node-subtitle">Claude writes it</div>
+            </div>
+            <div class="connector"></div>
+            <div class="node">
+                <div class="node-icon">🎨</div>
+                <div class="node-title">Design</div>
+                <div class="node-subtitle">Cowork designs it</div>
+            </div>
+            <div class="connector"></div>
+            <div class="node">
+                <div class="node-icon">💾</div>
+                <div class="node-title">Notion API</div>
+                <div class="node-subtitle">API publishes it</div>
+            </div>
+            <div class="connector"></div>
+            <div class="node">
+                <div class="node-icon">⚙️</div>
+                <div class="node-title">Automation</div>
+                <div class="node-subtitle">Gmail + Calendar + Apollo</div>
+            </div>
+            <div class="connector"></div>
+            <div class="node">
+                <div class="node-icon">📢</div>
+                <div class="node-title">Distribution</div>
+                <div class="node-subtitle">LinkedIn organic</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

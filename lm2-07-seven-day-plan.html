@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your 7-Day Quick Start</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
+        .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+        .header { text-align: center; margin-bottom: 32px; }
+        .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin-top: 28px; margin-bottom: 28px; }
+        .day { background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 10px; padding: 16px; text-align: center; position: relative; transition: all 0.3s ease; cursor: pointer; }
+        .day:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
+        .day-label { font-size: 12px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .day-title { font-size: 12px; font-weight: 600; color: #e2e8f0; line-height: 1.4; margin-bottom: 8px; }
+        .day-time { font-size: 11px; color: #a0aec0; background-color: rgba(99, 102, 241, 0.1); padding: 6px 8px; border-radius: 4px; display: inline-block; }
+        .summary-box { background: linear-gradient(135deg, #2f1f3f 0%, #1f1633 100%); border: 1px solid #4d2d5f; border-radius: 10px; padding: 24px; text-align: center; }
+        .summary-label { font-size: 11px; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-value { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #22c55e 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
+        .summary-description { font-size: 12px; color: #cbd5e1; }
+        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .timeline { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; } .day { padding: 12px; } .day-title { font-size: 11px; } .day-time { font-size: 10px; } .summary-value { font-size: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Your 7-Day Quick Start</div>
+        </div>
+        <div class="timeline">
+            <div class="day"><div class="day-label">Day 1</div><div class="day-title">Set up Cowork + Notion</div><div class="day-time">30 min</div></div>
+            <div class="day"><div class="day-label">Day 2</div><div class="day-title">Generate lead magnet content</div><div class="day-time">60 min</div></div>
+            <div class="day"><div class="day-label">Day 3</div><div class="day-title">Create HTML visuals</div><div class="day-time">45 min</div></div>
+            <div class="day"><div class="day-label">Day 4</div><div class="day-title">Host on GitHub Pages</div><div class="day-time">15 min</div></div>
+            <div class="day"><div class="day-label">Day 5</div><div class="day-title">Connect automations</div><div class="day-time">45 min</div></div>
+            <div class="day"><div class="day-label">Day 6</div><div class="day-title">Write LinkedIn hook post</div><div class="day-time">30 min</div></div>
+            <div class="day"><div class="day-label">Day 7</div><div class="day-title">Launch + monitor</div><div class="day-time">15 min</div></div>
+        </div>
+        <div class="summary-box">
+            <div class="summary-label">Total Time Investment</div>
+            <div class="summary-value">4 hours</div>
+            <div class="summary-description">Your lead magnet is live and generating leads</div>
+        </div>
+    </div>
+</body>
+</html>
