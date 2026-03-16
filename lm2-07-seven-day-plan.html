@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your 7-Day Quick Start</title>
+    <title>Built in Minutes, Not Months</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,37 +11,62 @@
         .container { max-width: 900px; width: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border: 1px solid #222222; border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
         .header { text-align: center; margin-bottom: 32px; }
         .title { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin-top: 28px; margin-bottom: 28px; }
-        .day { background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 10px; padding: 16px; text-align: center; position: relative; transition: all 0.3s ease; cursor: pointer; }
-        .day:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
-        .day-label { font-size: 12px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .day-title { font-size: 12px; font-weight: 600; color: #e2e8f0; line-height: 1.4; margin-bottom: 8px; }
-        .day-time { font-size: 11px; color: #a0aec0; background-color: rgba(99, 102, 241, 0.1); padding: 6px 8px; border-radius: 4px; display: inline-block; }
-        .summary-box { background: linear-gradient(135deg, #2f1f3f 0%, #1f1633 100%); border: 1px solid #4d2d5f; border-radius: 10px; padding: 24px; text-align: center; }
+        .subtitle { font-size: 14px; color: #a0aec0; margin-top: 8px; }
+        .timeline { display: flex; align-items: center; gap: 0; margin-top: 28px; margin-bottom: 28px; justify-content: center; flex-wrap: wrap; }
+        .phase { flex: 1; min-width: 120px; max-width: 170px; background: linear-gradient(135deg, #1f1f3f 0%, #16213e 100%); border: 1px solid #2d2d5f; border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s ease; }
+        .phase:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2); }
+        .phase-time { font-size: 22px; font-weight: 700; color: #6366f1; margin-bottom: 6px; }
+        .phase-title { font-size: 12px; font-weight: 600; color: #e2e8f0; line-height: 1.4; margin-bottom: 4px; }
+        .phase-detail { font-size: 10px; color: #a0aec0; }
+        .arrow { color: #6366f1; font-size: 20px; font-weight: 700; padding: 0 8px; flex-shrink: 0; }
+        .summary-box { background: linear-gradient(135deg, #1a3f1a 0%, #162e16 100%); border: 1px solid #2d5f2d; border-radius: 10px; padding: 24px; text-align: center; }
         .summary-label { font-size: 11px; color: #a0aec0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .summary-value { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #22c55e 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
-        .summary-description { font-size: 12px; color: #cbd5e1; }
-        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .timeline { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; } .day { padding: 12px; } .day-title { font-size: 11px; } .day-time { font-size: 10px; } .summary-value { font-size: 20px; } }
+        .summary-value { font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #22c55e 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
+        .summary-description { font-size: 13px; color: #86efac; font-weight: 500; }
+        @media (max-width: 768px) { .container { padding: 24px; } .title { font-size: 18px; } .timeline { flex-direction: column; gap: 8px; } .arrow { transform: rotate(90deg); } .phase { min-width: 100%; max-width: 100%; } }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="title">Your 7-Day Quick Start</div>
+            <div class="title">Built in Minutes, Not Months</div>
+            <div class="subtitle">What used to take weeks now takes one Cowork session</div>
         </div>
         <div class="timeline">
-            <div class="day"><div class="day-label">Day 1</div><div class="day-title">Set up Cowork + Notion</div><div class="day-time">30 min</div></div>
-            <div class="day"><div class="day-label">Day 2</div><div class="day-title">Generate lead magnet content</div><div class="day-time">60 min</div></div>
-            <div class="day"><div class="day-label">Day 3</div><div class="day-title">Create HTML visuals</div><div class="day-time">45 min</div></div>
-            <div class="day"><div class="day-label">Day 4</div><div class="day-title">Host on GitHub Pages</div><div class="day-time">15 min</div></div>
-            <div class="day"><div class="day-label">Day 5</div><div class="day-title">Connect automations</div><div class="day-time">45 min</div></div>
-            <div class="day"><div class="day-label">Day 6</div><div class="day-title">Write LinkedIn hook post</div><div class="day-time">30 min</div></div>
-            <div class="day"><div class="day-label">Day 7</div><div class="day-title">Launch + monitor</div><div class="day-time">15 min</div></div>
+            <div class="phase">
+                <div class="phase-time">3 min</div>
+                <div class="phase-title">Content</div>
+                <div class="phase-detail">Claude generates it</div>
+            </div>
+            <div class="arrow">›</div>
+            <div class="phase">
+                <div class="phase-time">3 min</div>
+                <div class="phase-title">Design</div>
+                <div class="phase-detail">Cowork builds visuals</div>
+            </div>
+            <div class="arrow">›</div>
+            <div class="phase">
+                <div class="phase-time">3 min</div>
+                <div class="phase-title">Publish</div>
+                <div class="phase-detail">GitHub + Notion API</div>
+            </div>
+            <div class="arrow">›</div>
+            <div class="phase">
+                <div class="phase-time">3 min</div>
+                <div class="phase-title">Automate</div>
+                <div class="phase-detail">Gmail + Calendar + Apollo</div>
+            </div>
+            <div class="arrow">›</div>
+            <div class="phase">
+                <div class="phase-time">3 min</div>
+                <div class="phase-title">Launch</div>
+                <div class="phase-detail">LinkedIn post → Live</div>
+            </div>
         </div>
         <div class="summary-box">
-            <div class="summary-label">Total Time Investment</div>
-            <div class="summary-value">4 hours</div>
-            <div class="summary-description">Your lead magnet is live and generating leads</div>
+            <div class="summary-label">Total time from zero to live lead magnet</div>
+            <div class="summary-value">∼ 15 minutes</div>
+            <div class="summary-description">This guide you’re reading? Built exactly like this.</div>
         </div>
     </div>
 </body>
